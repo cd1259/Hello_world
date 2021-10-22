@@ -8,7 +8,9 @@ int main()
 		for (k = 1; i >= k; k++)
 		{
 			sum = i * k;
-			printf("%d*%d=%-2d ", i, k, sum);
+			printf("%d*%d=%d\t", k, i, sum);
+			//printf("%d*%d=%2d ", k, i, sum);
+			//printf("%d*%d=%-2d ", k, i, sum);
 		}
 		printf("\n");
 	}

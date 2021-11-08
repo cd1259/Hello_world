@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include<string.h>
 int get_max(int x, int y)
 {
 	if (x > y)
@@ -77,6 +77,38 @@ int feibo(int n)
 	else
 		return feibo(n - 1) + feibo(n - 2);	
 }
+int feibo2(int n)                                      
+{                                                      
+	int k = 3;                                         
+	int num = 0,num1 = 1,num2 = 1;                     
+	if (n <= 2)                                        
+		return 1;
+	else
+	{
+		while (k <= n)
+		{
+			num = num1 + num2;
+			num1 = num2;
+			num2 = num;
+			k++;
+		}
+	}
+	return num;
+}
+int feibo3(int n)
+{
+	int a = 1;
+	int b = 1;
+	int c = 1;
+	while (n > 2)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+		n--;
+	}
+	return c;
+}
 int jiahe(int n)
 {
 	if (n <= 1)
@@ -98,47 +130,54 @@ int main()
 	if (sushu(a) == 1)
 		printf("%d", a);*/
 
-	/*int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int a = 8;
-	int sum = two_search(arr, a,sz);
-	if (sum == -1)
-		printf("没找到\n");
-	else
-		printf("%d\n", sum);*/
-	/*int num = 0;
-	test(&num);
-		printf("%d\n", num);
-	test(&num);
-		printf("%d\n", num); 
-	test(&num);
-		printf("%d\n", num);*/
+		/*int arr[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+		int sz = sizeof(arr) / sizeof(arr[0]);
+		int a = 8;
+		int sum = two_search(arr, a,sz);
+		if (sum == -1)
+			printf("没找到\n");
+		else
+			printf("%d\n", sum);*/
+			/*int num = 0;
+			test(&num);
+				printf("%d\n", num);
+			test(&num);
+				printf("%d\n", num);
+			test(&num);
+				printf("%d\n", num);*/
+
+				/*int num = 0;
+				scanf_s("%d", &num);
+				print(num);*/
+
+				/*char arr[] = "bit";
+				int sum = mycount(arr);
+				printf("%d\n", sum);*/
+
+				//计算阶乘（函数递归）
+				/*int a = 0;
+				scanf_s("%d", &a);
+				int sum = jiecheng(a);
+				printf("%d!=%d", a, sum);*/
+
+				//生成斐波那契数 1 1 2 3 5 8 13 21 34 55
+				/*int n = 0;
+				scanf_s("%d", &n);
+				int num = feibo3(n);
+				printf("%d\n", num);*/
+
+				//n+(n-1)+(n-2)+...+1
+				/*int n = 0;
+				scanf_s("%d", &n);
+				int sum = jiahe(n);
+				printf("%d\n", sum);*/
+
+	/*char arr[] = "abcf";
+	printf("%d\n",strlen(arr));
+	printf("%s\n", arr);*/
+
+	int arr[2][3] = { {1,2,3},4,5,6, };
 	
-	/*int num = 0;
-	scanf_s("%d", &num);
-	print(num);*/
-
-	/*char arr[] = "bit";
-	int sum = mycount(arr);
-	printf("%d\n", sum);*/
-	
-	//计算阶乘（函数递归）
-	/*int a = 0;
-	scanf_s("%d", &a);
-	int sum = jiecheng(a);
-	printf("%d!=%d", a, sum);*/
-
-	//生成斐波那契数 1 1 2 3 5 8 13 21 34 55
-	int n = 0;
-	scanf_s("%d", &n);
-	int num = feibo(n);
-	printf("%d\n", num);
-
-	//n+(n-1)+(n-2)+...+1
-	/*int n = 0;
-	scanf_s("%d", &n);
-	int sum = jiahe(n);
-	printf("%d\n", sum);*/
 
 	return 0;
 }
